@@ -1,6 +1,58 @@
+const vuelos = [
+    { id: 1, nombre: "BUENOS AIRES", precio: "$15000", destino: "INTERIOR" },
+    { id: 2, nombre: "CHUBUT", precio: "$25000", destino: "INTERIOR" },
+    { id: 3, nombre: "SANTA FE", precio: "$10000", destino: "INTERIOR" },
+    { id: 4, nombre: "MISIONES", precio: "$18000", destino: "INTERIOR" },
+    { id: 5, nombre: "BRASIL", precio: "$40000", destino: "EXTERIOR" },
+    { id: 6, nombre: "URUGUAY", precio: "$35000", destino: "EXTERIOR" },
+    { id: 7, nombre: "PARAGUAY", precio: "$32000", destino: "EXTERIOR" },
+    { id: 8, nombre: "CHILE", precio: "$30000", destino: "EXTERIOR" },
+]
 
 
-function vuelos() {
+    
+
+
+function vuelo(id, nombre, precio, destino) {
+    this.id = id;
+    this.nombre = nombre;
+    this.precio = precio;
+    this.destino = destino;
+}
+
+console.log(vuelos);
+
+
+
+const nuevoVuelo = new vuelo(9, "SALTA", "16000", "INTERIOR");
+console.log(nuevoVuelo);
+
+function cargarVuelo(arr, valor) {
+    arr.push(valor);
+}
+
+cargarVuelo(vuelos, nuevoVuelo);
+console.log(vuelos);
+
+alert("Bienvenido a MNB tu agencia de vuelos ideal, te llevamos de Córdoba a donde vos quieras");
+let ingreso = prompt("Ingresa tu nombre y apellido para saber el precio de los vuelos");
+
+
+function busquedaVuelos(arr, filtro) {
+    const busqueda = arr.filter((el) => {
+        return el.destino.includes(filtro);
+    })
+    return busqueda;
+}
+let tipo = prompt("Que vuelos desea elegir Interior o Exterior").toUpperCase();
+console.log(busquedaVuelos(vuelos, tipo));
+
+
+
+
+
+
+/*function vuelos() {
     alert("Bienvenido a MNB tu agencia de vuelos ideal, te llevamos de Córdoba a donde vos quieras");
     let ingreso = prompt("Ingresa tu nombre y apellido para saber el precio de los vuelos");
 
@@ -60,6 +112,8 @@ function vuelos() {
 }
 vuelos();
 
+
+
 let comunicate = alert ("Si te interesaron nuestras tarifas de viajes o tenes alfuna consulta,  dejanos tus datos y nos comunicaremos con vos")
 
 function comunicar () {
@@ -73,7 +127,7 @@ function comunicar () {
     }
 }
 
-comunicar()
+comunicar()*/
 
 
 
